@@ -87,8 +87,8 @@ The workspace includes various objects that robots can interact with:
 ## 🚀 Quick Start
 
 ### Prerequisites
-- NVIDIA Isaac Sim 4.5.0+
-- Python 3.8+
+- NVIDIA Isaac Sim 5.0
+- Python 3.11
 - CUDA-compatible GPU
 
 ### Installation & Running
@@ -99,45 +99,8 @@ git clone --recurse-submodules https://github.com/sachinkum0009/iron-giant.git
 cd iron-giant
 
 # Run the dual-robot simulation
-~/isaacsim/python.sh scripts/main_world.py [USD_ROBOT_PATH]
-
-# Example with ABB Cobot
-~/isaacsim/python.sh scripts/main_world.py library/ABB/CRB15000_10kg_152_v1/CRB15000_10kg_152/CRB15000_10kg_152.usd
+./run_sim.sh
 ```
-
-### Command Line Arguments
-
-```bash
-python scripts/main_world.py <usd_path>
-```
-
-- `usd_path`: Path to robot USD file from the extensive robot library
-
-## 🎨 Features
-
-### ✨ Multi-Robot Coordination
-- **Synchronized Movement**: Phase-offset joint control for coordinated operations
-- **Independent Control**: Each robot maintains individual articulation control
-- **Collision Avoidance**: Spatial positioning prevents inter-robot interference
-
-### 📊 Advanced Monitoring
-- **Real-time RGB Capture**: Visual monitoring of pick-and-place operations
-- **Depth Sensing**: 3D spatial awareness for precise manipulation
-- **Automated Logging**: Frame-by-frame operation recording
-- **Distance Measurement**: Center-pixel depth analysis for quality control
-
-### 🏭 Industrial Simulation
-- **Realistic Physics**: Accurate object dynamics and robot interactions
-- **Multi-Object Environment**: Complex workspace with various manipulation targets
-- **Scalable Architecture**: Easy addition of more robots or objects
-- **Production-Ready Code**: Clean, modular, and maintainable structure
-
-### 🎬 Visual Capabilities  
-- **Livestream Support**: Real-time visualization through Omniverse streaming
-- **High-Quality Rendering**: Ray-traced lighting for photorealistic results
-- **Configurable Display**: Adjustable resolution and rendering settings
-- **Export Capabilities**: Image sequence generation for analysis
-
 
 
 
