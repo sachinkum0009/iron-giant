@@ -51,6 +51,30 @@ class SimulationWorld:
         self.camera_manager = CameraManager()
         
         print("Robots positioned using Core API")
+
+    def add_usd(self, usd_path: Path, prim_path: str, position: np.ndarray, orientation: np.ndarray):
+        """
+        Add a USD file to the simulation world at the specified prim path with position and orientation.
+        
+        Args:
+            usd_path: Path to the USD file
+            prim_path: Prim path where the USD will be added
+            position: 3D position as numpy array [x, y, z]
+            orientation: Quaternion orientation as numpy array [w, x, y, z]
+        """
+        from isaacsim.core.utils.stage import add_reference_to_stage
+        from isaacsim.core.prims import XFormPrim
+        
+        # Add the USD reference to the stage
+        add_reference_to_stage(str(usd_path), prim_path)
+        
+        # Create XFormPrim to handle the transform
+        xform = XFormPrim(prim_paths_expr=prim_path)
+        
+        # Set position and orientation using the same method as robots
+        pos_reshaped = position.reshape(1, -1)
+        orient_reshaped = orientation.reshape(1, -1)
+        xform.set_world_poses(pos_reshaped, orient_reshaped)
     
     def add_robot(self, name: str, position: np.ndarray, orientation: np.ndarray, 
                   phase_offset: float = 0.0) -> Robot:
