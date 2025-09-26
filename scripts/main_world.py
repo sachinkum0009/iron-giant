@@ -42,6 +42,8 @@ def main():
     
     usd_path: Path = args.usd_path.resolve()
     assert usd_path.exists(), f"USD file not found: {usd_path}"
+
+    print(f"Loading USD from: {usd_path}")
     
     # Create simulation world
     sim_world = SimulationWorld(usd_path)
@@ -63,7 +65,7 @@ def main():
     sim_world.add_usd(
         usd_path=chess_usd_path,
         prim_path="/World/Chess",
-        position=np.array([0.0, 2.0, 0.5]),  # Position it 2 units along Y-axis and 0.5 units up
+        position=np.array([0.0, 0.0, 0.0]),  # Position it 2 units along Y-axis and 0.5 units up
         orientation=np.array([1.0, 0.0, 0.0, 0.0])  # No rotation (identity quaternion)
     )
     sim_world.add_usd(

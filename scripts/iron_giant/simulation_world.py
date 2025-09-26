@@ -36,16 +36,16 @@ class SimulationWorld:
         self.world.scene.add_default_ground_plane()  # type: ignore
         
         # Add a cube object
-        cube_2 = self.world.scene.add(  # type: ignore
-            DynamicCuboid(
-                prim_path="/World/cube_2",
-                name="cube_2",
-                position=np.array([0.0, 0.0, 0.0]),
-                scale=np.array([0.2, 0.2, 0.2]),
-                size=1.0,
-                color=np.array([255, 0, 0]),
-            )
-        )
+        # cube_2 = self.world.scene.add(  # type: ignore
+        #     DynamicCuboid(
+        #         prim_path="/World/cube_2",
+        #         name="cube_2",
+        #         position=np.array([0.0, 0.0, 0.0]),
+        #         scale=np.array([0.2, 0.2, 0.2]),
+        #         size=1.0,
+        #         color=np.array([255, 0, 0]),
+        #     )
+        # )
         
         # Set up camera
         self.camera_manager = CameraManager()
